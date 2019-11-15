@@ -1,5 +1,6 @@
 {
   "name": "money-exchange",
+  "description": "Technical test for Belatrix Engineer",
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
@@ -7,9 +8,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy:ghpages": "ng deploy --base-href=/money-exchange-frontend/"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~8.2.14",
     "@angular/common": "~8.2.14",
@@ -19,6 +21,7 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "angular-cli-ghpages": "^0.6.0",
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
