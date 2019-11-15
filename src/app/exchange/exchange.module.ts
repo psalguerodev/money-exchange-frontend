@@ -4,9 +4,13 @@ import { CalculatorExchangeComponent } from './components/calculator-exchange/ca
 import { ExchangeService } from './exchange.service';
 import { CurrencyExchangeComponent } from './container/currency-exchange/currency-exchange.component';
 import { ExchangeRoutingModule } from './exchange-routing.module';
+import { HeaderComponent } from '../ui-shared/header/header.component';
 
 @NgModule({
-  declarations: [CalculatorExchangeComponent, CurrencyExchangeComponent],
+  declarations: [
+    CalculatorExchangeComponent,
+    CurrencyExchangeComponent,
+  ],
   imports: [
     CommonModule,
     ExchangeRoutingModule
