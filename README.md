@@ -4,6 +4,10 @@
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Trello
+
+For contributing on this project use Trello [Public Trello Kanban](https://trello.com/b/e37QSC8C/belatrix-money-exchange).
+
 ## Code scaffolding
 
 ```
