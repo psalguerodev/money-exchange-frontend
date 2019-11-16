@@ -5,8 +5,7 @@ $defaultForntFamily: 'Saira', sans-serif !important;
 body {
   background: $bodyBackground;
   font-family: $defaultForntFamily;
-  min-height: 100vh !important;
-  height: 100% !important;
+
 }
 
 textarea:focus,
@@ -55,6 +54,14 @@ input[type="color"]:focus,
 .bg-primary-2 {
   // background-image: linear-gradient(to right top, #164a99, #20458e, #254084, #283c7a, #2a3770);
   background: rgba(8, 79, 172, 0.1);
+}
+
+.bg-primary-3 {
+  background: rgba(21, 100, 183, 0.9);
+}
+
+.padding-20 {
+  padding: 20px;
 }
 
 .without-radius {

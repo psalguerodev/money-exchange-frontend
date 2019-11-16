@@ -1,8 +1,6 @@
 body {
   background: rgba(0, 0, 0, 0.003);
   font-family: "Saira", sans-serif !important;
-  min-height: 100vh !important;
-  height: 100% !important;
 }
 textarea:focus,
 input[type="text"]:focus,
@@ -43,6 +41,12 @@ input[type="color"]:focus,
 }
 .bg-primary-2 {
   background: rgba(8, 79, 172, 0.1);
+}
+.bg-primary-3 {
+  background: rgba(21, 100, 183, 0.9);
+}
+.padding-20 {
+  padding: 20px;
 }
 .without-radius {
   border-radius: 0 !important;
