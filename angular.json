@@ -131,7 +131,11 @@
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
-          "options": {}
+          "options": {
+            "baseHref": "https://github.com/psalguerodev/money-exchange-frontend/",
+            "name": "money-exachange",
+            "email": "patrick.salguero.avalos@gmail.com"
+          }
         }
       }
     }
