@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UiSharedModule } from './ui-shared/ui-shared.module';
 
-
 @NgModule({
   declarations: [
     AppComponent
