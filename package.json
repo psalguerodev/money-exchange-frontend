@@ -6,8 +6,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
     "lint": "ng lint",
+    "test": "ng test  --watch=false --browsers=ChromeHeadless",
+    "test:coverage": "ng test --watch=false --browsers=ChromeHeadless --codeCoverage=true",
+    "test:watch": "ng test --watch=true --browsers=ChromeHeadless --codeCoverage=true",
     "e2e": "ng e2e",
     "deploy:ghpages": "ng deploy --base-href=/money-exchange-frontend/"
   },

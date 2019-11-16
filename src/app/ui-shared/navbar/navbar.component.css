@@ -1,0 +1,13 @@
+.background-navbar {
+  background-image: linear-gradient(
+    to right top,
+    #164a99,
+    #20458e,
+    #254084,
+    #283c7a,
+    #2a3770
+  );
+}
+.active  {
+  color: darkblue !important;
+}
