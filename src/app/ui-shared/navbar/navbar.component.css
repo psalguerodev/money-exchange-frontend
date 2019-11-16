@@ -11,3 +11,6 @@
 .active  {
   color: darkblue !important;
 }
+.nav-item-custom a {
+  font-size: 1.2rem;
+}
