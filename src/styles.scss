@@ -5,7 +5,6 @@ $defaultForntFamily: 'Saira', sans-serif !important;
 body {
   background: $bodyBackground;
   font-family: $defaultForntFamily;
-
 }
 
 textarea:focus,
@@ -26,7 +25,7 @@ select:focus,
 input[type="color"]:focus,
 .form-control:focus,
 .uneditable-input:focus {
-  border: 2px solid #20458e !important;;
+  border: 1px solid #007bff !important;;
   box-shadow: none;
   outline: 0 none;
 }
@@ -52,7 +51,6 @@ input[type="color"]:focus,
 }
 
 .bg-primary-2 {
-  // background-image: linear-gradient(to right top, #164a99, #20458e, #254084, #283c7a, #2a3770);
   background: rgba(8, 79, 172, 0.1);
 }
 

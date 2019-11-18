@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CalculatorExchangeComponent } from './components/calculator-exchange/calculator-exchange.component';
-import { ExchangeService } from './exchange.service';
 import { CurrencyExchangeComponent } from './container/currency-exchange/currency-exchange.component';
 import { ExchangeRoutingModule } from './exchange-routing.module';
-import { HeaderComponent } from '../ui-shared/header/header.component';
+import { ExchangeService } from './exchange.service';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,9 @@ import { HeaderComponent } from '../ui-shared/header/header.component';
   ],
   imports: [
     CommonModule,
-    ExchangeRoutingModule
+    HttpClientModule,
+    ExchangeRoutingModule,
+    FormsModule,
   ],
   providers: [ExchangeService]
 })

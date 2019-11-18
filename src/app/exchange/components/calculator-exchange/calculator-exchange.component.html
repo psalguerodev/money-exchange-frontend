@@ -1,26 +1,42 @@
-<!-- Inputs calculator -->
-<div class="row justify-content-center">
+<div class="calculator-container bg-white bg-calculator">
+  <!-- Inputs calculator -->
+  <div class="row justify-content-center padding-20">
 
-  <div class="col-md-5 col-sm-12 col-lg-5">
-    <div class="form-group">
-      <label for="localCurrency"></label>
-      <input type="text" name="localCurrency" id="localCurrency" class="form-control form-control-lg align-center" placeholder="USD">
+    <div class="col-md-5 col-sm-12 col-lg-5">
+      <div class="form-group">
+        <input type="text" name="localCurrency" id="localCurrency" [(ngModel)]="moneyExchangeDto.amount"
+          (keyup.enter)="calculateMoneyExchange()" class="form-control form-control-lg align-center" placeholder="USD"
+          autofocus>
+      </div>
+    </div>
+
+    <div class="col-md-5 col-sm-12 col-lg-5">
+      <div class="form-group">
+        <input type="text" name="externalCurrency" id="externalCurrency" [(ngModel)]="moneyExchangeDto.amountCurrencyTo"
+          [readOnly]="true" class="form-control form-control-lg align-center" placeholder="EUR">
+      </div>
+    </div>
+
+    <!-- Progressbar -->
+    <div class="col-md-10">
+      <div class="alert alert-danger" *ngIf="isError && !isLoading">
+        An error occurred while calculating foreign currency, please retry.
+      </div>
+      <div class="loading" *ngIf="isLoading">
+        <p class="text-secondary">loading...</p>
+        <div class="progress" style="height: 5px;">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar"
+            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="col-md-5 col-sm-12 col-lg-5">
-    <div class="form-group">
-      <label for="externalCurrency"></label>
-      <input type="text" name="externalCurrency" id="externalCurrency" class="form-control form-control-lg align-center "
-        placeholder="EUR">
+  <!-- Calculate button -->
+  <div class="row justify-content-center top-10">
+    <div class="col-md-4">
+      <button type="button" class="btn btn-block btn-lg btn-primary"
+        (click)="calculateMoneyExchange()">Calculate</button>
     </div>
-  </div>
-
-</div>
-
-<!-- Calculate button -->
-<div class="row justify-content-center top-10">
-  <div class="col-md-4">
-    <button type="button" class="btn btn-block btn-lg btn-primary">Calculate</button>
   </div>
 </div>

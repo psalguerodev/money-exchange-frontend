@@ -11,7 +11,7 @@
     "test:coverage": "ng test --watch=false --browsers=ChromeHeadless --codeCoverage=true",
     "test:watch": "ng test --watch=true --browsers=ChromeHeadless --codeCoverage=true",
     "e2e": "ng e2e",
-    "deploy:ghpages": "ng deploy --base-href=/money-exchange-frontend/"
+    "deploy:ghpages": "export GH_TOKEN=5da3e28bd251b416a5ea587cc4390c9b47a5fe5d && ng deploy --base-href=/money-exchange-frontend/"
   },
   "private": false,
   "dependencies": {
