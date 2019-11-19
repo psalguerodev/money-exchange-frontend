@@ -4,7 +4,7 @@
 
     <div class="col-md-5 col-sm-12 col-lg-5">
       <div class="form-group">
-        <input type="text" name="localCurrency" id="localCurrency" [(ngModel)]="moneyExchangeDto.amount"
+        <input type="text" name="amount" id="amount" [(ngModel)]="moneyExchangeDto.amount"
           (keyup.enter)="calculateMoneyExchange()" class="form-control form-control-lg align-center" placeholder="USD"
           autofocus>
       </div>
@@ -12,7 +12,7 @@
 
     <div class="col-md-5 col-sm-12 col-lg-5">
       <div class="form-group">
-        <input type="text" name="externalCurrency" id="externalCurrency" [(ngModel)]="moneyExchangeDto.amountCurrencyTo"
+        <input type="text" name="amountCurrencyTo" id="amountCurrencyTo" [(ngModel)]="moneyExchangeDto.amountCurrencyTo"
           [readOnly]="true" class="form-control form-control-lg align-center" placeholder="EUR">
       </div>
     </div>

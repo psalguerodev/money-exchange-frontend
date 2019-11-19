@@ -15,8 +15,8 @@ import { ExchangeService } from './exchange.service';
   imports: [
     CommonModule,
     HttpClientModule,
-    ExchangeRoutingModule,
     FormsModule,
+    ExchangeRoutingModule,
   ],
   providers: [ExchangeService]
 })

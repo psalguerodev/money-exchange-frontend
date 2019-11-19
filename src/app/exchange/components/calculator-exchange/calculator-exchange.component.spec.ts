@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CalculatorExchangeComponent } from './calculator-exchange.component';
+import { FormsModule } from '@angular/forms';
+import { ExchangeService } from '../../exchange.service';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('CalculatorExchangeComponent', () => {
   let component: CalculatorExchangeComponent;
@@ -8,7 +12,13 @@ describe('CalculatorExchangeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CalculatorExchangeComponent ]
+      imports: [
+        CommonModule,
+        FormsModule,
+        HttpClientModule
+      ],
+      declarations: [ CalculatorExchangeComponent ],
+      providers: [ExchangeService]
     })
     .compileComponents();
   }));
