@@ -1,42 +1,58 @@
 <div class="calculator-container bg-white bg-calculator">
-  <!-- Inputs calculator -->
-  <div class="row justify-content-center padding-20">
+  <div id="calculator" *ngIf="showCalculator">
+    <!-- Inputs calculator -->
+    <div class="row justify-content-center padding-20">
 
-    <div class="col-md-5 col-sm-12 col-lg-5">
-      <div class="form-group">
-        <input type="text" name="amount" id="amount" [(ngModel)]="moneyExchangeDto.amount"
-          (keyup.enter)="calculateMoneyExchange()" class="form-control form-control-lg align-center" placeholder="USD"
-          autofocus>
+      <div class="col-md-5 col-sm-12 col-lg-5">
+        <div class="form-group">
+          <input type="text" name="amount" id="amount" [(ngModel)]="moneyExchangeDto.amount"
+            (keyup.enter)="calculateMoneyExchange()" class="form-control form-control-lg align-center" placeholder="USD"
+            autofocus>
+        </div>
       </div>
-    </div>
 
-    <div class="col-md-5 col-sm-12 col-lg-5">
-      <div class="form-group">
-        <input type="text" name="amountCurrencyTo" id="amountCurrencyTo" [(ngModel)]="moneyExchangeDto.amountCurrencyTo"
-          [readOnly]="true" class="form-control form-control-lg align-center" placeholder="EUR">
+      <div class="col-md-5 col-sm-12 col-lg-5">
+        <div class="form-group">
+          <input type="text" name="amountCurrencyTo" id="amountCurrencyTo"
+            [(ngModel)]="moneyExchangeDto.amountCurrencyTo" [readOnly]="true"
+            class="form-control form-control-lg align-center" placeholder="EUR">
+        </div>
       </div>
-    </div>
 
-    <!-- Progressbar -->
-    <div class="col-md-10">
-      <div class="alert alert-danger" *ngIf="isError && !isLoading">
-        An error occurred while calculating foreign currency, please retry.
-      </div>
-      <div class="loading" *ngIf="isLoading">
-        <p class="text-secondary">loading...</p>
-        <div class="progress" style="height: 5px;">
-          <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar"
-            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+      <!-- Progressbar -->
+      <div class="col-md-10">
+        <div class="alert alert-danger" *ngIf="isError && !isLoading">
+          An error occurred while calculating foreign currency, please retry.
+        </div>
+        <div class="loading" *ngIf="isLoading">
+          <p class="text-secondary">loading...</p>
+          <div class="progress" style="height: 5px;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar"
+              aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Calculate button -->
-  <div class="row justify-content-center top-10">
-    <div class="col-md-4">
-      <button type="button" class="btn btn-block btn-lg btn-primary"
-        (click)="calculateMoneyExchange()">Calculate</button>
+    <!-- Calculate button -->
+    <div class="row justify-content-center top-10">
+      <div class="col-md-4">
+        <button type="button" class="btn btn-block btn-lg btn-primary"
+          (click)="calculateMoneyExchange()">Calculate</button>
+      </div>
     </div>
   </div>
+
+  <div class="row justify-content-center top-10" *ngIf="!showCalculator">
+    <div *ngIf="showWebComponent">
+      <ibk-wc-bio (resolveProcess)="handlerFinishProcess($event.detail)" [documentNumber]="'70570294'"
+        [register]="'S36413'" [store]="'100'" [transactionCode]="'FTI-01'" [mode]="'popup'" [autoplay]="false"
+        [textButton]="'Validate finger'" [colorHex]="'#0039a6'" [channel]="'FTI'" [documentType]="'DNI'">
+      </ibk-wc-bio>
+    </div>
+    <div *ngIf="!showWebComponent" class="text-secondary">
+      Loading...
+    </div>
+  </div>
+  
 </div>

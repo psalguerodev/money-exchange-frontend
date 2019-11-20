@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ExchangeService, MoneyExchangeDto, CurrencyType } from '../../exchange.service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-calculator-exchange',
@@ -12,10 +13,14 @@ export class CalculatorExchangeComponent implements OnInit {
   isLoading: boolean;
   isError: boolean;
 
+  showWebComponent: boolean;
+  showCalculator: boolean;
+
   constructor(
     private readonly exchangeService: ExchangeService) { }
 
   ngOnInit() {
+    this.initWebComponent();
     this.moneyExchangeDto = {
       amount: '',
       amountCurrencyTo: '',
@@ -24,7 +29,14 @@ export class CalculatorExchangeComponent implements OnInit {
     };
   }
 
-  calculateMoneyExchange() {
+  initWebComponent(): void {
+    customElements.whenDefined(environment.microfrontends.bio.tagName)
+      .then(() => {
+        this.showWebComponent = true;
+      });
+  }
+
+  calculateMoneyExchange(): void {
     this.isLoading = true;
     this.exchangeService.getMoneyExchange(this.moneyExchangeDto)
       .subscribe((data: MoneyExchangeDto) => {
@@ -33,14 +45,18 @@ export class CalculatorExchangeComponent implements OnInit {
       }, _ => this.handleErrorCalculate());
   }
 
-  handleSuccessCalculate() {
+  handleSuccessCalculate(): void {
     this.isLoading = false;
     this.isError = false;
   }
 
-  handleErrorCalculate() {
+  handleErrorCalculate(): void {
     this.isError = true;
     this.isLoading = false;
+  }
+
+  handlerFinishProcess(event): void {
+    this.showCalculator = true;
   }
 
 }

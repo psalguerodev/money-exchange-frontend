@@ -37,6 +37,7 @@
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/assets/js/particles.min.js",
               "src/assets/js/particles.impl.js",
+              "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"
             ]
           },
           "configurations": {
